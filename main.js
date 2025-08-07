@@ -11,7 +11,7 @@ const fs = require('fs');
 const { version } = require('./package.json');
 
 const updateserver = 'https://update.electronjs.org';
-const feed = `${updateserver}/${repository.owner}/${repository.name}/${process.platform}-${process.arch}/${app.getVersion()}`;
+const feed = `${updateserver}/xanzinfl/Stoner-Tools/${process.platform}-${process.arch}/${app.getVersion()}`;
 
 autoUpdater.setFeedURL(feed);
 
