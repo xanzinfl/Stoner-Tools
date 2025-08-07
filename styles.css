@@ -1,0 +1,164 @@
+:root {
+    --bg-color: #050505;
+    --text-color: #E0E0E0;
+    --accent-color: #54a354;
+    --panel-bg: #141414;
+    --input-bg: #2c2c2c;
+    --input-border: #555;
+    --button-hover: #65b465;
+}
+
+body, html {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+    text-align: center;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+  text-align: left;
+}
+
+input[type="text"], input[type="url"] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-color);
+    border-radius: 4px;
+}
+
+button {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--button-hover);
+}
+
+.countdown-display {
+    text-align: center;
+}
+
+.countdown-timer-text {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    letter-spacing: 2px;
+}
+
+.info-text {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #b0b0b0;
+}
+
+/* Inline Statuses */
+.status-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: var(--panel-bg);
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+/* Inline Buttons */
+.controls-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Collapsible Dropdown */
+.collapsible {
+  background-color: var(--panel-bg);
+  cursor: pointer;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 1em;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.active, .collapsible:hover {
+  background-color: var(--accent-color);
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  background-color: var(--panel-bg);
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0 0 5px 5px;
+}
+
+/* Settings Panel Contents */
+.content h3 {
+    text-align: left;
+    border-bottom: 1px solid var(--input-border);
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+}
+.checkbox-container label {
+  margin-bottom: 0;
+}
+.checkbox-container input {
+  margin: 0;
+  width: auto;
+}
+
+#save-btn {
+    width: 100%;
+    margin: 15px 0;
+}

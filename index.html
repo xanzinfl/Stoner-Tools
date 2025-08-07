@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Stoner Tools</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="countdown-display">
+            <div id="countdown-timer" class="countdown-timer-text">--:--:--</div>
+            <div id="timezone-info" class="info-text">Finding the next 4:20...</div>
+            <div id="local-time-info" class="info-text"></div>
+        </div>
+
+        <div class="status-container">
+            <div id="status" class="status-item">🔴 Disconnected</div>
+            <div id="ripCountDisplay" class="status-item">Rips: Loading...</div>
+        </div>
+        
+        <div class="controls-container">
+            <button onclick="adjustRip('inc')">➕ 1 Toke</button>
+            <button onclick="adjustRip('dec')">➖ 1 Toke</button>
+            <button onclick="adjustRip('reset')">🔁 Reset</button>
+            <button onclick="startRPC()">🟢 Start RPC</button>
+            <button onclick="stopRPC()">🔴 Stop RPC</button>
+        </div>
+
+        <button class="collapsible">Configuration</button>
+        <div class="content">
+            <h3>420 Finder</h3>
+            <label>Notification Text <input id="notification-text" type="text"></label>
+                
+            <h3>Discord RPC</h3>
+            <label>Client ID: <input id="clientId" type="text" /></label>
+            <label>State: <input id="state" type="text" /></label>
+            <label>Details: <input id="details" type="text" placeholder="Use {rip} for counter" /></label>
+            <label>Button 1 Label: <input id="b1Label" type="text" /></label>
+            <label>Button 1 URL: <input id="b1Url" type="url" /></label>
+            <label>Button 2 Label: <input id="b2Label" type="text" /></label>
+            <label>Button 2 URL: <input id="b2Url" type="url" /></label>
+            <label>Large Image Key: <input id="largeImageKey" type="text" /></label>
+            <label>Large Image Text: <input id="largeImageText" type="text" /></label>
+            <label>Small Image Key: <input id="smallImageKey" type="text" /></label>
+            <label>Small Image Text: <input id="smallImageText" type="text" /></label>
+
+            <h3>Rip Counter</h3>
+            <label>Rip File Path: <input id="filePath" type="text" /></label>
+
+            <h3>Application</h3>
+            <div class="checkbox-container">
+                <input type="checkbox" id="minimize-to-tray">
+                <label for="minimize-to-tray">Minimize to Tray</label>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="startup" />
+                <label for="startup">Run on Startup</label>
+            </div>
+            
+            <button id="save-btn">Save Settings</button>
+        </div>
+    </div>
+    <script src="renderer.js"></script>
+    <script>    
+        var coll = document.getElementsByClassName("collapsible");
+        for (var i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight){
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                } 
+            });
+        }
+    </script>
+</body>
+</html>
