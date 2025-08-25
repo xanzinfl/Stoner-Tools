@@ -49,6 +49,8 @@ To enable the rip counter, you must provide a valid **Rip File Path**.
 ### OBS Widget Integration
 The app hosts a local server on port `4200` to provide real-time widgets for your stream.
 
+We also host our own widgets, check those out [here!](https://bloodmoonstudios.xyz/widgets)
+
 1.  In OBS, add a new **Browser** source.
 2.  Set the **URL** to one of the following:
     -   **420 Countdown:** `http://localhost:4200/widgets/countdown`
